@@ -8,6 +8,7 @@
 	<title>Expense Tracker</title>
 </head>
 <body>
+
 	<div class="main_container container_show">
 		<h1>Expense Tracker</h1>
 		<div class="balance">
@@ -25,6 +26,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="list_container container_show">
 		<div class="list_select">
 			<h3 class="selected">All</h3>
@@ -38,7 +40,7 @@
 					<div class="item_content">
 						<div class="content_text">
 							<h5>2021.06.02</h5>
-							<h3>돈벌고싶다</h3>
+							<h3>이노베이션 아카데미</h3>
 						</div>
 						<span class="plus_color">+700</span>
 					</div>
@@ -49,5 +51,28 @@
 			new expense
 		</div>
 	</div>
+
+	<div class="add_container container_show">
+		<h3>new expense</h3>
+		<h3>Date</h3>
+		<div class="date_input">
+			<input type="number" name="year" id="year" placeholder="2020">
+			<input type="number" name="month" id="month" placeholder="01">
+			<input type="number" name="day" id="day" placeholder="01">
+		</div>
+		<h3>Content</h3>
+		<div class="expense_type">
+			<input type="radio" name="expense_type" id="plus">
+			<label for="plus" class="plus_color">Income</label>
+			<input type="radio" name="expense_type" id="minus">
+			<label for="minus" class="minus_color">Expense</label>
+		</div>
+		<input type="text" name="content" id="content" placeholder="내용을 입력해주세요">
+		<h3>Amount</h3>
+		<input type="number" name="amount" id="amount" placeholder="금액을 입력해주세요">
+		<button class="submit">submit</button>
+		<button class="cancel">cancel</button>
+	</div>
+
 </body>
 </html>

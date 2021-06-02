@@ -14,9 +14,19 @@ body {
 	align-items: center;
 	flex-direction: column;
 	background-color: #fff;
+	margin: 3em 0em;
 }
 
 /* ================== container ================== */
+
+.list_container {
+	display: none;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+	display: none;
+}
 
 .container_show {
 	width: 90%;
@@ -30,13 +40,7 @@ body {
 	align-items: center;
 
 	background-color: #f4f4f4;
-}
-
-.container_show:first-child {
-	border-radius: 1.5em 1.5em 0em 0em;
-}
-.container_show:last-child {
-	border-radius: 0em 0em 1.5em 1.5em;
+	border-radius: .7em;
 }
 
 .plus_color {
@@ -200,4 +204,92 @@ body {
 	border: 1px dashed #107098;
 	border-radius: .5em;
 	background-color: #ffffff;
+}
+
+/* ================== add container ================== */
+
+.add_container {
+	align-items: center;
+}
+
+.add_container > h3 {
+	width: 100%;
+	font-size: 1em;
+	font-weight: 500;
+	padding-bottom: .2em;
+	padding-top: .5em;
+}
+
+.add_container > h3:first-child {
+	font-size: 1.1em;
+	font-weight: 600;
+	margin-bottom: .3em;
+	border-bottom: 1px solid #00000026;
+}
+
+.add_container input {
+	outline: none;
+	border: 1px solid #00000026;
+	text-align: center;
+	padding: .5em;
+	border-radius: .5em;
+	width: 99%;
+	margin-bottom: .1em;
+	font-size: .8em;
+}
+
+.add_container input[type="radio"] {
+	display: none;
+}
+
+.add_container .date_input {
+	display: flex;
+	flex-direction: row;
+}
+
+.add_container .date_input input{
+	margin: .1em;
+	width: 33%;
+}
+
+.add_container .expense_type {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: .2em;
+}
+
+.add_container .expense_type label {
+	padding: .5em;
+	width: 49%;
+	margin: .1em;
+	text-align: center;
+	border: 1px solid #00000026;
+	border-radius: .5em;
+	font-size: .8em;
+	background-color: #fff;
+	transition: background-color ease-in-out .2s ;
+}
+
+.add_container .expense_type input:checked + label {
+	background-color: #107098;
+	color: white;
+}
+
+.add_container button {
+	width: 99%;
+	border: none;
+	padding: .6em;
+	font-size: .8em;
+	border-radius: .5em;
+	background: none;
+	margin: .1em;
+}
+
+.add_container .submit {
+	background-color: #107098;
+	color: #fff;
+	margin-top: 1.5em;
 }
