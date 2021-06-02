@@ -1,0 +1,93 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: #edeeee;
+}
+
+/* ================== container ================== */
+
+.container_show {
+	width: 90%;
+	max-width: 25em;
+	margin: 3px;
+	padding: 1em;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background-color: #fff;
+}
+
+.container_show:first-child {
+	border-radius: 1.5em 1.5em 0em 0em;
+}
+.container_show:last-child {
+	border-radius: 0em 0em 1.5em 1.5em;
+}
+
+.plus_color {
+	color: #2fc714;
+}
+.minus_color {
+	color: #d30b0b;
+}
+.money::after {
+	content: '￦';
+}
+
+/* ================== main container ================== */
+
+.main_container > h1 {
+	font-size: 1.5em;
+	margin: .7em;
+}
+
+.main_container .balance {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: .5em;
+}
+
+.main_container .balance h4 {
+	color: #00000066;
+}
+.main_container .balance h2 {
+	color: #107098
+}
+
+.main_container .count_div {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: #f4f4f4;
+	border-radius: .7em;
+}
+
+.main_container .count_div .count_box{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: .2em 2.3em;
+	margin: .9em 0em;
+}
+.main_container .count_div .count_box:first-child{
+	border-right: 1px solid #00000032;
+}
+.main_container .count_div .count_box h1{
+	font-size: 1em;
+}
