@@ -10,18 +10,18 @@
 <body>
 
 	<div class="main_container container_show">
-		<h1>Expense Tracker</h1>
+		<h1>나의 소비 내역</h1>
 		<div class="balance">
-			<h4>your balance</h3>
+			<h4>소비 내역 합계</h4>
 			<h2 class="money balance_data">300</h2>
 		</div>
 		<div class="count_div">
 			<div class="income_count count_box">
-				<h2>Income</h2>
+				<h2>들어온 돈</h2>
 				<h1 class="plus_color money income_data">700</h1>
 			</div>
 			<div class="expense_count count_box">
-				<h2>Expense</h2>
+				<h2>나간 돈</h2>
 				<h1 class="minus_color money expense_data">400</h1>
 			</div>
 		</div>
@@ -30,51 +30,39 @@
 	<div class="list_container container_show">
 		<div class="list_select">
 			<input type="radio" name="listType" id="all" value="all" checked>
-			<label for="all">all</label>
+			<label for="all">전체</label>
 			<input type="radio" name="listType" id="in" value="plus">
-			<label for="in">in</label>
+			<label for="in">수입</label>
 			<input type="radio" name="listType" id="out" value="minus">
-			<label for="out">out</label>
+			<label for="out">지출</label>
 		</div>
 		<ul class="expense_list">
-			<li>
-				<div class="list_item">
-					<button class="delete_btn minus_color" value="01234">Del</button>
-					<div class="item_content">
-						<div class="content_text">
-							<h5>2021.06.02</h5>
-							<h3>이노베이션 아카데미</h3>
-						</div>
-						<span class="plus_color money">+700</span>
-					</div>
-				</div>
-			</li>
 		</ul>
 		<div class="new_list">
-			new expense
+			새 거래 내역을 추가하세요 +
 		</div>
 	</div>
 
 	<div class="add_container">
-		<h3>new expense</h3>
-		<h3>Date</h3>
+		<h3>새로운 거래</h3>
+		<h3>날짜</h3>
 		<div class="date_input">
 			<input type="number" name="year" id="year" placeholder="2020">
 			<input type="number" name="month" id="month" placeholder="01">
 			<input type="number" name="day" id="day" placeholder="01">
 		</div>
-		<h3>Content</h3>
+		<h3>내역</h3>
 		<div class="expense_type">
 			<input type="radio" name="expense_type" id="plus">
-			<label for="plus" class="plus_color">Income</label>
+			<label for="plus" class="plus_color">들어온 돈</label>
 			<input type="radio" name="expense_type" id="minus">
-			<label for="minus" class="minus_color">Expense</label>
+			<label for="minus" class="minus_color">나간 돈</label>
 		</div>
 		<input type="text" name="content" id="content" placeholder="내용을 입력해주세요">
-		<h3>Amount</h3>
+		<h3>금액</h3>
 		<input type="number" name="amount" id="amount" placeholder="금액을 입력해주세요">
-		<button class="submit">submit</button>
-		<button class="cancel">cancel</button>
+		<button class="submit">추가하기</button>
+		<button class="cancel">닫기</button>
 	</div>
 	<div class="container_show"></div>
 	<script type="module" src="./js/app.js"></script>

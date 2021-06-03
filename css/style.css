@@ -29,7 +29,7 @@ input::-webkit-outer-spin-button{
 
 .container_show {
 	width: 90%;
-	max-width: 25em;
+	max-width: 23em;
 	margin-top: 5px;
 	padding: 1em 2em;
 
@@ -126,9 +126,9 @@ input::-webkit-outer-spin-button{
 }
 
 .list_container .list_select label{
-	font-size: 1em;
-	font-weight: 500;
-	margin-right: .55em;
+	font-size: .8em;
+	font-weight: 600;
+	margin-right: .7em;
 	color: #00000042;
 	cursor: pointer;
 }
@@ -196,7 +196,7 @@ input::-webkit-outer-spin-button{
 }
 .list_item .item_content .content_text h3{
 	font-size: .85em;
-	font-weight: 600;
+	font-weight: 500;
 }
 
 .list_item:hover > .item_content {
@@ -210,11 +210,14 @@ input::-webkit-outer-spin-button{
 	align-items: center;
 
 	width: 100%;
-	height: 3.7em;
+	padding: 1.3em;
 	color: #107098;
 	border: 1px dashed #107098;
 	border-radius: .5em;
 	background-color: #ffffff;
+
+	font-size: .8em;
+	font-weight: 600;
 }
 
 /* ================== add container ================== */
@@ -225,15 +228,14 @@ input::-webkit-outer-spin-button{
 
 .add_container > h3 {
 	width: 100%;
-	font-size: 1em;
-	font-weight: 500;
+	font-size: .8em;
+	font-weight: 600;
 	padding-bottom: .2em;
-	padding-top: .5em;
+	padding-top: .7em;
 }
 
 .add_container > h3:first-child {
-	font-size: 1.1em;
-	font-weight: 600;
+	font-size: 1em;
 	margin-bottom: .3em;
 	border-bottom: 1px solid #00000026;
 }
@@ -297,6 +299,7 @@ input::-webkit-outer-spin-button{
 	border-radius: .5em;
 	background: none;
 	margin: .1em;
+	outline: none;
 }
 
 .add_container .submit {
