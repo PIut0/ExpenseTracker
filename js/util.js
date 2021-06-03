@@ -22,9 +22,10 @@ function addDateZero(date) {
 }
 
 function clearInputData() {
-	$('#year').value = '';
-	$('#month').value = '';
-	$('#day').value = '';
+	//$('#year').value = '';
+	//$('#month').value = '';
+	//$('#day').value = '';
+	$('#date').valueAsDate = new Date();
 	$('#content').value = '';
 	$('#amount').value = '';
 	$('#plus').checked = false;

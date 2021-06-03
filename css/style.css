@@ -251,6 +251,10 @@ input::-webkit-outer-spin-button{
 	margin-bottom: .1em;
 	font-size: .8em;
 }
+.add_container input[type="date"] {
+	text-align: left;
+	margin-top: .3em;
+}
 
 .add_container input[type="radio"] {
 	display: none;

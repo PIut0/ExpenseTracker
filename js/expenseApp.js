@@ -95,11 +95,12 @@ function renderItem(data) {
 
 function getItemData() {
 	let id = Math.floor(Math.random() * 100000000);
-	let date = "" + $('#year').value + addDateZero($('#month').value) + addDateZero($('#day').value);
+	let date = $('#date').value.replaceAll('-','');
+	//let date = "" + $('#year').value + addDateZero($('#month').value) + addDateZero($('#day').value);
 	let content = $('#content').value;
 	let amount = $('#amount').value;
 
-	if (date.length != 8)
+	if (!date.length)
 		throw alert('날짜를 다시 입력해 주세요.');
 	if (!$('#plus').checked && !$('#minus').checked)
 		throw alert('금액 종류를 선택해주세요');

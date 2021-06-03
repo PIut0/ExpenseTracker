@@ -29,14 +29,14 @@ function addEventHook() {
 	$('.new_list').addEventListener('click', showAddContainer);
 	$('.cancel').addEventListener('click', hideAddContainer);
 	$('.submit').addEventListener('click', addNewList);
-	$('#year').addEventListener('keyup', () => {
-		if ($('#year').value.toString().length === 4)
-			$('#month').focus();
-	});
-	$('#month').addEventListener('keyup', () => {
-		if ($('#month').value.toString().length === 2)
-			$('#day').focus();
-	});
+	//$('#year').addEventListener('keyup', () => {
+	//	if ($('#year').value.toString().length === 4)
+	//		$('#month').focus();
+	//});
+	//$('#month').addEventListener('keyup', () => {
+	//	if ($('#month').value.toString().length === 2)
+	//		$('#day').focus();
+	//});
 	document.getElementsByName('listType').forEach(e => {
 		e.addEventListener('click', () => {
 			let type = Array.from(document.getElementsByName('listType')).find(e => e.checked).value;
