@@ -1,4 +1,4 @@
-import { $, addDateZero } from "./util.js";
+import { $ } from "./util.js";
 import { expense } from "./app.js";
 import { getItemData } from "./expenseApp.js";
 
@@ -37,6 +37,14 @@ function addEventHook() {
 		if ($('#month').value.toString().length === 2)
 			$('#day').focus();
 	});
+	document.getElementsByName('listType').forEach(e => {
+		e.addEventListener('click', () => {
+			let type = Array.from(document.getElementsByName('listType')).find(e => e.checked).value;
+
+			expense.setLenderType(type);
+			expense.renderList();
+		})
+	})
 }
 
 export { addEventHook, addRemoveEventHook };

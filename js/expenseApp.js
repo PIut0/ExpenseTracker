@@ -8,6 +8,7 @@ class expenseApp {
 		this.expenseCount = localStorageData.expenseCount;
 		this.balance = localStorageData.balance;
 		this.expenseList = localStorageData.expenseList;
+		this.lenderType = "all";
 	}
 
 	get expenseData() {
@@ -24,6 +25,10 @@ class expenseApp {
 		this.balance = this.incomeCount - this.expenseCount;
 	}
 
+	setLenderType(type) {
+		this.lenderType = type;
+	}
+
 	renderBalance() {
 		$('.balance_data').innerHTML = changeMoneyFormat(this.balance);
 		$('.income_data').innerHTML = changeMoneyFormat(this.incomeCount);
@@ -33,7 +38,8 @@ class expenseApp {
 	renderList() {
 		$('.expense_list').innerHTML = '';
 		this.expenseList.forEach(element => {
-			renderItem(element);
+			if (element.amountType == this.lenderType || this.lenderType == "all")
+				renderItem(element);
 		});
 		addRemoveEventHook();
 		this.renderBalance();

@@ -125,7 +125,7 @@ input::-webkit-outer-spin-button{
 	border-bottom: 1px solid #00000022;
 }
 
-.list_container .list_select h3{
+.list_container .list_select label{
 	font-size: 1em;
 	font-weight: 500;
 	margin-right: .55em;
@@ -133,7 +133,10 @@ input::-webkit-outer-spin-button{
 	cursor: pointer;
 }
 
-.list_container .list_select .selected{
+.list_container .list_select input{
+	display: none;
+}
+.list_container .list_select input:checked + label{
 	color: #000;
 	transition: color ease-in-out .3s;
 }
