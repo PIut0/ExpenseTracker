@@ -53,7 +53,7 @@ class expenseApp {
 
 		this.setBalance();
 		this.expenseList.push(data);
-		this.expenseList.sort((a, b) => a.date - b.date);
+		this.expenseList.sort((a, b) => b.date - a.date);
 		setLocalStorageData(this.expenseData);
 		this.renderList();
 	}
