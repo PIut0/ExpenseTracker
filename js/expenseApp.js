@@ -1,4 +1,4 @@
-import { addEventHook } from "./event.js";
+import { addRemoveEventHook } from "./event.js";
 import { setLocalStorageData } from "./localStorage.js";
 import { $, changeDateFormat, changeMoneyFormat, addDateZero, clearInputData } from "./util.js";
 
@@ -31,12 +31,12 @@ class expenseApp {
 	}
 
 	renderList() {
-		$('.expense_list').innerHTML = ''
+		$('.expense_list').innerHTML = '';
 		this.expenseList.forEach(element => {
 			renderItem(element);
 		});
+		addRemoveEventHook();
 		this.renderBalance();
-		addEventHook();
 	}
 
 	addListData(data) {
@@ -56,7 +56,7 @@ class expenseApp {
 		for(let i = 0; i < this.expenseList.length; i++) {
 			if (this.expenseList[i].id == id) {
 				let data = this.expenseList[i];
-				if (data.amountType == "plus")
+				if (data.amountType === "plus")
 					this.incomeCount -= parseInt(data.amount);
 				else
 					this.expenseCount -= parseInt(data.amount);
@@ -71,7 +71,7 @@ class expenseApp {
 }
 
 function renderItem(data) {
-	let prefix = (data.amountType == "plus") ? "+" : "-";
+	let prefix = (data.amountType === "plus") ? "+" : "-";
 	let element = document.createElement('li');
 	element.innerHTML = `
 	<div class="list_item">
