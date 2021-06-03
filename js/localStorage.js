@@ -26,4 +26,8 @@ function setLocalStorageData(data) {
 	localStorage.setItem('expenseData', JSON.stringify(data));
 }
 
-export { getLocalStorageData, setLocalStorageData };
+function clearLocalStorage() {
+	localStorage.removeItem('expenseData');
+}
+
+export { getLocalStorageData, setLocalStorageData, clearLocalStorage };

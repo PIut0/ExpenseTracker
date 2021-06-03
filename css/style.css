@@ -147,6 +147,7 @@ input::-webkit-outer-spin-button{
 	display: inline-block;
 	width: 100%;
 	list-style: none;
+	margin-bottom: .2em;
 }
 
 .list_item {
