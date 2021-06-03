@@ -14,10 +14,8 @@ function initLocalStorageData() {
 function getLocalStorageData() {
 	let ret = localStorage.getItem('expenseData');
 
-	if (!ret)
+	if (!ret || !(ret = JSON.parse(ret)).expenseList.length)
 		ret = initLocalStorageData();
-	else
-		ret = JSON.parse(ret);
 
 	return (ret);
 }
