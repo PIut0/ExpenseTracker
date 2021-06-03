@@ -1,5 +1,5 @@
 import { $ } from "./util.js";
-import { expense } from "./app.js";
+import { expense } from "./main.js";
 import { getItemData } from "./expenseApp.js";
 
 
