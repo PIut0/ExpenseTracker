@@ -25,9 +25,9 @@ class expenseApp {
 	}
 
 	renderBalance() {
-		$('.balance_data').innerHTML = this.balance;
-		$('.income_data').innerHTML = this.incomeCount;
-		$('.expense_data').innerHTML = this.expenseCount;
+		$('.balance_data').innerHTML = changeMoneyFormat(this.balance);
+		$('.income_data').innerHTML = changeMoneyFormat(this.incomeCount);
+		$('.expense_data').innerHTML = changeMoneyFormat(this.expenseCount);
 	}
 
 	renderList() {
