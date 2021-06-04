@@ -101,20 +101,20 @@ function getItemData() {
 	let amount = $('#amount').value;
 
 	if (!date.length)
-		throw alert('날짜를 다시 입력해 주세요.');
+		throw alert('잘못된 날짜입니다');
 	if (!$('#plus').checked && !$('#minus').checked)
 		throw alert('금액 종류를 선택해주세요');
 	if (!content)
 		throw alert('내용을 입력해주세요.');
-	if (!amount)
-		throw alert('금액을 입력해주세요.');
+	if (!amount || amount <= 0)
+		throw alert('잘못된 금액입니다.');
 
 	let amountType = $('#plus').checked ? "plus" : "minus";
 	let ret = {};
 	ret.id = id;
 	ret.date = date;
 	ret.content = content;
-	ret.amount = amount;
+	ret.amount = Math.floor(Math.abs(amount));
 	ret.amountType = amountType;
 	clearInputData();
 	return (ret);

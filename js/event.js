@@ -2,7 +2,6 @@ import { $ } from "./util.js";
 import { expense } from "./main.js";
 import { getItemData } from "./expenseApp.js";
 
-
 function addNewList() {
 	expense.addListData(getItemData());
 }
