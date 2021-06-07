@@ -4,8 +4,8 @@ import { $, changeDateFormat, changeMoneyFormat, addDateZero, clearInputData } f
 
 class expenseApp {
 	constructor(localStorageData) {
-		this.incomeCount = localStorageData.incomeCount;
-		this.expenseCount = localStorageData.expenseCount;
+		this._incomeCount = localStorageData.incomeCount;
+		this._expenseCount = localStorageData.expenseCount;
 		this.balance = localStorageData.balance;
 		this.expenseList = localStorageData.expenseList;
 		this.lenderType = "all";
@@ -22,21 +22,21 @@ class expenseApp {
 	}
 
 	get incomeCount() {
-		return (parseInt(this.incomeCount));
+		return (parseInt(this._incomeCount));
 	}
 
 	set incomeCount(data) {
 		if (data)
-			this.incomeCount = parseInt(data);
+			this._incomeCount = parseInt(data);
 	}
 
 	get expenseCount() {
-		return (parseInt(this.expenseCount));
+		return (parseInt(this._expenseCount));
 	}
 
 	set expenseCount(data) {
 		if (data)
-			this.expenseCount = parseInt(data);
+			this._expenseCount = parseInt(data);
 	}
 
 	setBalance() {
