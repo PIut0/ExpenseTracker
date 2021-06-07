@@ -21,12 +21,20 @@ class expenseApp {
 		return (ret);
 	}
 
-	setIncomeCount(incomeCount) {
-		this.incomeCount = incomeCount;
+	get incomeCount() {
+		return (parseInt(this.incomeCount));
 	}
 
-	setExpenseCount(expenseCount) {
-		this.expenseCount = expenseCount;
+	set incomeCount(data) {
+		this.incomeCount = parseInt(data);
+	}
+
+	get expenseCount() {
+		return (parseInt(this.expenseCount));
+	}
+
+	set expenseCount(data) {
+		this.expenseCount = parseInt(data);
 	}
 
 	setBalance() {
@@ -35,22 +43,6 @@ class expenseApp {
 
 	setLenderType(type) {
 		this.lenderType = type;
-	}
-
-	getIncomeCount() {
-		return (this.incomeCount);
-	}
-
-	getExpenseCount() {
-		return (this.expenseCount);
-	}
-
-	getBalance() {
-		return (this.balance);
-	}
-
-	getExpenseList() {
-		return (this.expenseList);
 	}
 
 	whenChangeList() {
@@ -78,9 +70,9 @@ class expenseApp {
 
 	addListData(data) {
 		if (data.amountType == "plus")
-			this.incomeCount += parseInt(data.amount);
+			this.incomeCount = this.incomeCount + parseInt(data.amount);
 		else
-			this.expenseCount += parseInt(data.amount);
+			this.expenseCount = this.expenseCount + parseInt(data.amount);
 
 		this.expenseList.push(data);
 		this.whenChangeList();
