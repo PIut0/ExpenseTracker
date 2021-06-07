@@ -21,12 +21,44 @@ class expenseApp {
 		return (ret);
 	}
 
+	setIncomeCount(incomeCount) {
+		this.incomeCount = incomeCount;
+	}
+
+	setExpenseCount(expenseCount) {
+		this.expenseCount = expenseCount;
+	}
+
 	setBalance() {
 		this.balance = this.incomeCount - this.expenseCount;
 	}
 
 	setLenderType(type) {
 		this.lenderType = type;
+	}
+
+	getIncomeCount() {
+		return (this.incomeCount);
+	}
+
+	getExpenseCount() {
+		return (this.expenseCount);
+	}
+
+	getBalance() {
+		return (this.balance);
+	}
+
+	getExpenseList() {
+		return (this.expenseList);
+	}
+
+	whenChangeList() {
+		this.setBalance();
+		this.expenseList.sort((a, b) => b.date - a.date);
+		setLocalStorageData(this.expenseData);
+		this.renderList();
+		this.renderBalance();
 	}
 
 	renderBalance() {
@@ -42,7 +74,6 @@ class expenseApp {
 				renderItem(element);
 		});
 		addRemoveEventHook();
-		this.renderBalance();
 	}
 
 	addListData(data) {
@@ -51,11 +82,8 @@ class expenseApp {
 		else
 			this.expenseCount += parseInt(data.amount);
 
-		this.setBalance();
 		this.expenseList.push(data);
-		this.expenseList.sort((a, b) => b.date - a.date);
-		setLocalStorageData(this.expenseData);
-		this.renderList();
+		this.whenChangeList();
 	}
 
 	removeListData(id) {
@@ -70,9 +98,7 @@ class expenseApp {
 				break ;
 			}
 		}
-		this.setBalance();
-		setLocalStorageData(this.expenseData);
-		this.renderList();
+		this.whenChangeList();
 	}
 }
 
