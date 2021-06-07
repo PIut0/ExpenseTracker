@@ -26,7 +26,8 @@ class expenseApp {
 	}
 
 	set incomeCount(data) {
-		this.incomeCount = parseInt(data);
+		if (data)
+			this.incomeCount = parseInt(data);
 	}
 
 	get expenseCount() {
@@ -34,7 +35,8 @@ class expenseApp {
 	}
 
 	set expenseCount(data) {
-		this.expenseCount = parseInt(data);
+		if (data)
+			this.expenseCount = parseInt(data);
 	}
 
 	setBalance() {
