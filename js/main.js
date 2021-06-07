@@ -6,4 +6,4 @@ import { clearInputData } from "./util.js";
 export let expense = new expenseApp(getLocalStorageData());
 addEventHook();
 clearInputData();
-expense.renderList();
+expense.whenChangeList();
