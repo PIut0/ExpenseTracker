@@ -26,8 +26,7 @@ class expenseApp {
 	}
 
 	set incomeCount(data) {
-		if (data)
-			this._incomeCount = parseInt(data);
+		this._incomeCount = parseInt(data);
 	}
 
 	get expenseCount() {
@@ -35,8 +34,7 @@ class expenseApp {
 	}
 
 	set expenseCount(data) {
-		if (data)
-			this._expenseCount = parseInt(data);
+		this._expenseCount = parseInt(data);
 	}
 
 	setBalance() {
@@ -84,10 +82,10 @@ class expenseApp {
 		for(let i = 0; i < this.expenseList.length; i++) {
 			if (this.expenseList[i].id == id) {
 				let data = this.expenseList[i];
-				if (data.amountType === "plus")
-					this.incomeCount -= parseInt(data.amount);
+				if (data.amountType == "plus")
+					this.incomeCount = this.incomeCount - parseInt(data.amount);
 				else
-					this.expenseCount -= parseInt(data.amount);
+					this.expenseCount = this.expenseCount - parseInt(data.amount);
 				this.expenseList.splice(i,1);
 				break ;
 			}
