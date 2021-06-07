@@ -114,7 +114,6 @@ function renderItem(data) {
 function getItemData() {
 	let id = Math.floor(Math.random() * 100000000);
 	let date = $('#date').value.replaceAll('-','');
-	//let date = "" + $('#year').value + addDateZero($('#month').value) + addDateZero($('#day').value);
 	let content = $('#content').value;
 	let amount = $('#amount').value;
 

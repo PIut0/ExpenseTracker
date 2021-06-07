@@ -260,16 +260,6 @@ input::-webkit-outer-spin-button{
 	display: none;
 }
 
-.add_container .date_input {
-	display: flex;
-	flex-direction: row;
-}
-
-.add_container .date_input input{
-	margin: .1em;
-	width: 33%;
-}
-
 .add_container .expense_type {
 	width: 100%;
 	display: flex;
