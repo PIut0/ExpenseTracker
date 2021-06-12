@@ -2,8 +2,8 @@ const localStorage = window.localStorage;
 
 function initLocalStorageData() {
 	let ret = {
-		"incomeCount": 0,
-		"expenseCount": 0,
+		"incomeSum": 0,
+		"expenseSum": 0,
 		"balance": 0,
 		"expenseList": []
 	}

@@ -4,8 +4,8 @@ import { $, changeDateFormat, changeMoneyFormat, addDateZero, clearInputData } f
 
 class expenseApp {
 	constructor(localStorageData) {
-		this._incomeCount = localStorageData.incomeCount;
-		this._expenseCount = localStorageData.expenseCount;
+		this._incomeSum = localStorageData.incomeSum;
+		this._expenseSum = localStorageData.expenseSum;
 		this.balance = localStorageData.balance;
 		this.expenseList = localStorageData.expenseList;
 		this.lenderType = "all";
@@ -14,31 +14,31 @@ class expenseApp {
 	get expenseData() {
 		let ret = {};
 
-		ret.incomeCount = parseInt(this.incomeCount);
-		ret.expenseCount = parseInt(this.expenseCount);
+		ret.incomeSum = parseInt(this.incomeSum);
+		ret.expenseSum = parseInt(this.expenseSum);
 		ret.balance = parseInt(this.balance);
 		ret.expenseList = this.expenseList;
 		return (ret);
 	}
 
-	get incomeCount() {
-		return (parseInt(this._incomeCount));
+	get incomeSum() {
+		return (parseInt(this._incomeSum));
 	}
 
-	set incomeCount(data) {
-		this._incomeCount = parseInt(data);
+	set incomeSum(data) {
+		this._incomeSum = parseInt(data);
 	}
 
-	get expenseCount() {
-		return (parseInt(this._expenseCount));
+	get expenseSum() {
+		return (parseInt(this._expenseSum));
 	}
 
-	set expenseCount(data) {
-		this._expenseCount = parseInt(data);
+	set expenseSum(data) {
+		this._expenseSum = parseInt(data);
 	}
 
 	setBalance() {
-		this.balance = this.incomeCount - this.expenseCount;
+		this.balance = this.incomeSum - this.expenseSum;
 	}
 
 	setLenderType(type) {
@@ -55,8 +55,8 @@ class expenseApp {
 
 	renderBalance() {
 		$('.balance_data').innerHTML = changeMoneyFormat(this.balance);
-		$('.income_data').innerHTML = changeMoneyFormat(this.incomeCount);
-		$('.expense_data').innerHTML = changeMoneyFormat(this.expenseCount);
+		$('.income_data').innerHTML = changeMoneyFormat(this.incomeSum);
+		$('.expense_data').innerHTML = changeMoneyFormat(this.expenseSum);
 	}
 
 	renderList() {
@@ -70,9 +70,9 @@ class expenseApp {
 
 	addListData(data) {
 		if (data.amountType == "plus")
-			this.incomeCount = this.incomeCount + parseInt(data.amount);
+			this.incomeSum = this.incomeSum + parseInt(data.amount);
 		else
-			this.expenseCount = this.expenseCount + parseInt(data.amount);
+			this.expenseSum = this.expenseSum + parseInt(data.amount);
 
 		this.expenseList.push(data);
 		this.whenChangeList();
@@ -83,9 +83,9 @@ class expenseApp {
 			if (this.expenseList[i].id == id) {
 				let data = this.expenseList[i];
 				if (data.amountType == "plus")
-					this.incomeCount = this.incomeCount - parseInt(data.amount);
+					this.incomeSum = this.incomeSum - parseInt(data.amount);
 				else
-					this.expenseCount = this.expenseCount - parseInt(data.amount);
+					this.expenseSum = this.expenseSum - parseInt(data.amount);
 				this.expenseList.splice(i,1);
 				break ;
 			}
