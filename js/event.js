@@ -6,8 +6,9 @@ function addNewList() {
 	expense.addListData(getItemData());
 }
 
-function removeListItem() {
-	expense.removeListData(this.value);
+function removeListItem(e) {
+	if (e.target.tagName == 'BUTTON')
+		expense.removeListData(e.target.value)
 }
 
 function hideAddContainer() {
@@ -18,24 +19,20 @@ function showAddContainer() {
 	$('.add_container').classList.add('container_show');
 }
 
-function addRemoveEventHook() {
-	document.querySelectorAll('.delete_btn').forEach(e => {
-		e.addEventListener('click', removeListItem);
-	});
+function changeLenderType(e) {
+	if (e.target.tagName == "INPUT") {
+		let type = Array.from(document.getElementsByName('listType')).find(e => e.checked).value;
+		expense.setLenderType(type);
+		expense.renderList();
+	}
 }
 
 function addEventHook() {
 	$('.new_list').addEventListener('click', showAddContainer);
 	$('.cancel').addEventListener('click', hideAddContainer);
 	$('.submit').addEventListener('click', addNewList);
-	document.getElementsByName('listType').forEach(e => {
-		e.addEventListener('click', () => {
-			let type = Array.from(document.getElementsByName('listType')).find(e => e.checked).value;
-
-			expense.setLenderType(type);
-			expense.renderList();
-		})
-	})
+	$('.expense_list').addEventListener('click', removeListItem);
+	$('.list_select').addEventListener('click', changeLenderType);
 }
 
-export { addEventHook, addRemoveEventHook };
+export { addEventHook };

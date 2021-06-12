@@ -1,4 +1,3 @@
-import { addRemoveEventHook } from "./event.js";
 import { setLocalStorageData } from "./localStorage.js";
 import { $, changeDateFormat, changeMoneyFormat, addDateZero, clearInputData } from "./util.js";
 
@@ -65,7 +64,6 @@ class expenseApp {
 			if (element.amountType == this.lenderType || this.lenderType == "all")
 				renderItem(element);
 		});
-		addRemoveEventHook();
 	}
 
 	addListData(data) {
